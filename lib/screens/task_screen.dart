@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/screens/add_task_screen.dart';
 import 'package:todoey/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
-  const TasksScreen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,17 @@ class TasksScreen extends StatelessWidget {
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-        //  Todo - fab
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (context) => AddTaskScreen(),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20.0),
+                topLeft: Radius.circular(20.0),
+              ),
+            ),
+          );
         },
         backgroundColor: Colors.lightBlueAccent,
         child: const Icon(
