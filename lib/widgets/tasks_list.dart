@@ -5,14 +5,8 @@ import 'package:todoey/widgets/task_tile.dart';
 
 
 
-class TasksList extends StatefulWidget {
+class TasksList extends StatelessWidget {
 
-
-  @override
-  State<TasksList> createState() => _TasksListState();
-}
-
-class _TasksListState extends State<TasksList> {
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +18,7 @@ class _TasksListState extends State<TasksList> {
               taskTitle: taskData.tasks[index].name,
               isChecked: taskData.tasks[index].isDone,
               checkboxCallback: (checkboxState) {
-                // setState(() {
-                //   widget.tasks[index].toggleDone();
-                //
-                // });
+                taskData.updateTask(taskData.tasks[index]);
 
               },
             );
