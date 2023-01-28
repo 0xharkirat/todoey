@@ -1,6 +1,5 @@
 class Task {
 
-
   String name;
   bool isDone;
 
